@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AWS Snake Game</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <h1>🐍 AWS Snake Game</h1>
+
+
+    <!-- PLAYER NAME -->
+
+    <input
+        type="text"
+        id="playerName"
+        placeholder="Enter your name"
+    >
+
+
+    <br>
+
+
+    <!-- SPEED SELECTION -->
+
+    <div class="speed-section">
+
+        <h3>Select Snake Speed</h3>
+
+        <button
+            class="speed-btn active"
+            onclick="selectSpeed(25, this)"
+        >
+            25%
+        </button>
+
+        <button
+            class="speed-btn"
+            onclick="selectSpeed(50, this)"
+        >
+            50%
+        </button>
+
+        <button
+            class="speed-btn"
+            onclick="selectSpeed(75, this)"
+        >
+            75%
+        </button>
+
+        <button
+            class="speed-btn"
+            onclick="selectSpeed(100, this)"
+        >
+            100%
+        </button>
+
+    </div>
+
+
+    <!-- START BUTTON -->
+
+    <button
+        class="start-btn"
+        onclick="startGame()"
+    >
+        ▶ Start Game
+    </button>
+
+
+    <!-- SCORE -->
+
+    <p>
+        Score:
+        <span id="score">0</span>
+    </p>
+
+
+    <!-- GAME CANVAS -->
+
+    <canvas
+        id="game"
+        width="400"
+        height="400"
+    ></canvas>
+
+
+    <!-- MESSAGE -->
+
+    <p id="message">
+        Enter your name and start the game
+    </p>
+
+
+    <!-- FOUR ARROW CONTROLS -->
+
+    <div class="controls">
+
+        <div class="arrow-row">
+
+            <button
+                class="arrow"
+                onclick="moveUp()"
+            >
+                ↑
+            </button>
+
+        </div>
+
+
+        <div class="arrow-row">
+
+            <button
+                class="arrow"
+                onclick="moveLeft()"
+            >
+                ←
+            </button>
+
+            <button
+                class="arrow"
+                onclick="moveDown()"
+            >
+                ↓
+            </button>
+
+            <button
+                class="arrow"
+                onclick="moveRight()"
+            >
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- LEADERBOARD -->
+
+    <div class="leaderboard">
+
+        <h2>🏆 Leaderboard</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Rank</th>
+
+                    <th>Player</th>
+
+                    <th>Score</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="leaderboard">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
